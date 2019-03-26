@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>lect_5</title>
+    <!--<link rel="stylesheet" href="main.css">-->
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+<h2>hello!</h2>
+<form action="/saveUser" method="post">
+    <input type="text" name="name" placeholder="username">
+    <input type="email" name="email" placeholder="email">
+    <input type="submit" name="" placeholder="touch me">
+</form>
+    <ol>
+        <li th:each="u:${users}">
+            <!--[[${u.id}]][[${u.name}]] -->
+            <a th:href="@{'user-'+${u.id}}" th:text="${u.name}"></a>
+        </li>
+    </ol>
+<!--<script src="main.js"></script>-->
+<script src="/js/main.js"></script>
+
+
+</body>
+</html>
